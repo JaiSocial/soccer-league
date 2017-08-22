@@ -1,0 +1,10 @@
+<template name="TeamSummary">
+	<article class="team">
+		<h3>{{name}}</h3>
+		<p>Coach:</p>
+		{{#each coaches}}
+			<p>Coach: <a href="mailto:{{email_address}}?Subject='{{name}}'">{{first_name}} {{last_name}}</a> - {{phone_number}}</p>
+		{{/each}}
+		<a href="/team/{{team_id}}">View Details</a>
+	</article>
+</template>

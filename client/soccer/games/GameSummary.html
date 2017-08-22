@@ -1,0 +1,9 @@
+<template name="GameSummary">
+	<article class="game">
+		<h3>{{home_team_name}} vs. {{away_team_name}} - {{formatDate}}</h3>
+		<p>Home Team: <a href="/team/{{home_team_id}}">{{home_team_name}} (home team)</a></p>
+		<p>Away Team: <a href="/team/{{away_team_id}}">{{away_team_name}} (away team)</a></p>
+		<p>Game Day: {{date}}</p>
+		<p>Location: <a href="/location/{{location_id}}">{{location_name}}</a></p>
+	</article>
+</template>

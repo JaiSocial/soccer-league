@@ -1,0 +1,13 @@
+db.teams.insertMany([{team_id: 1, name: "DC United", season_id: 1, coach_id : 1},
+{team_id: 2, name: "Manchester United", season_id: 1, coach_id : 2},
+{team_id: 3, name: "Barcelona", season_id: 1, coach_id : 3},
+{team_id: 4, name: "Liverpool", season_id: 1, coach_id : 4},
+{team_id: 5, name: "Manchester City", season_id: 1, coach_id : 5},
+{team_id: 6, name: "PSG", season_id: 1, coach_id : 6}]);
+
+
+db.locations.insertMany([
+	{location_id: 1, street_number: 123, street_name: "Deer Park Lane", zipcode: 20878, city: "Gaithersburg", state: "Maryland"},
+	{location_id: 2, street_number: 456, street_name: "Quince Orchard Blvd", zipcode: 20878, city: "Gaithersburg", state: "Maryland"},
+	{location_id: 3, street_number: 789, street_name: "Lakelands Blvd", zipcode: 20878, city: "Gaithersburg", state: "Maryland"},
+]);

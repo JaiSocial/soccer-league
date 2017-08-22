@@ -1,0 +1,11 @@
+<template name="PlayersDashboard">
+	<section class="players">
+		{{# if Template.subscriptionsReady}}
+			{{#each players}}
+				{{> PlayerSummary}}
+			{{/each}}
+		{{else}}
+		<p>Loading</p>
+		{{/if}}
+	</section>
+</template>

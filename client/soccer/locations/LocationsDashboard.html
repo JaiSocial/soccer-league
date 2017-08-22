@@ -1,0 +1,11 @@
+<template name="LocationsDashboard">
+	<section class="locations">
+		{{# if Template.subscriptionsReady}}
+			{{#each locations}}
+				{{> LocationSummary}}
+			{{/each}}
+		{{else}}
+		<p>Loading</p>
+		{{/if}}
+	</section>
+</template>

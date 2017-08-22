@@ -1,0 +1,8 @@
+<template name="SeasonDetails">
+	{{# if Template.subscriptionsReady}}
+		<h1>{{season.name}} - Details</h1>
+		<p>{{season.desc}}</p>
+	{{else}}
+		<p>Loading...</p>
+	{{/if}}
+</template>

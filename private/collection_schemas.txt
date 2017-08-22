@@ -1,0 +1,71 @@
+App Title: Soccer League
+
+Season has:
+-plural=Seasons
+-season_id:Number;label='Season ID'
+-name:String;label='Name'
+-desc:String;label=''
+-start_year:Number;min=2017;max=2100;label='Start Year'
+-start_month:Number;allowedValues=[1,2,3,4,5,6,7,8,9,10,11,12];label='Start Month'
+-end_year:Number;min=2017;max=2100;label='End Year'
+-end_month:Number;allowedValues=[1,2,3,4,5,6,7,8,9,10,11,12];label='End Month'
+-game_ids:[Number];label='Game IDs'
+ 
+Person has:
+-plural=Persons
+-no_publish=true
+-person_id:Number;label='Person ID'
+-first_name:String;label='First Name'
+-last_name:String;label='Last Name'
+-phone_number_1:String;label='Phone Number 1'
+-phone_number_2:String;label='Phone Number 2'
+-email_address:String;label='Email Address'
+-is_obsolete:Boolean;defaultValue=false;label='Obsolete'
+
+Coach has:
+-plural=Coaches
+-coach_id:Number;label='Coach ID'
+-person:Person
+
+Parent has:
+-plural=Parents
+-parent_id:Number;label='Parent ID'
+-person:Person
+
+Team has:
+-plural=Teams
+-team_id:Number;label='Team ID'
+-name:String;label='Name'
+-season_id:Number;label='Season ID'
+-coach_ids:[Number]
+
+TeamMember has:
+-plural=TeamMembers
+-team_member_id:Number;label='Team Member ID'
+-first_name:String;label='First Name'
+-last_name:String;label='Last Name'
+-nickname:String;label='Nickname'
+-jersey_number:Number;min=0;max=99;label='Jersey Number'
+-team_id:Number;min=1;label='Team ID'
+-parent_ids:[Number];label='Parent IDs'
+
+Location has:
+-plural=Locations
+-location_id:Number;min=1;label='Location ID'
+-name:String;label='Name'
+-street_number:String;label='Street Number'
+-street_name:String;label='Street Name'
+-zipcode:String;label='Zipcode'
+-city:String;label='City'
+-state:String;label='State'
+-google_maps_url:String
+
+Game has:
+-plural=Games
+-game_id:Number;label='Game ID';label='Game ID'
+-date:Date;label='Date';label='Date'
+-location_id:Number;min=1;label='Location ID'
+-home_team_id:Number;min=1;label='Home Team ID'
+-away_team_id:Number;min=1;label='Away Team ID'
+-home_team_score:Number;min=0;max=30;label='Home Team Score'
+-away_team_score:Number;min=0;max=30;label='Away Team Score'
