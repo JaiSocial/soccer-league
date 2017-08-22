@@ -1,0 +1,14 @@
+<template name="LocationDetails">
+	{{# if Template.subscriptionsReady}}
+		<h1>{{location.name}}</h1>
+		<article class="location">
+			<h3>{{location.name}}</h3>
+			<p>{{location.street_number}} {{location.street_name}}</p>
+			<p>{{location.city}}, {{location.state}}</p>
+			<p>{{location.zipcode}}</p>
+			<p><a target="_blank" href="{{location.google_maps_url}}">Google Maps</a></p>
+		</article>
+	{{else}}
+		<p>Loading</p>
+	{{/if}}
+</template>
