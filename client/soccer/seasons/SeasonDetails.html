@@ -1,7 +1,24 @@
 <template name="SeasonDetails">
 	{{# if Template.subscriptionsReady}}
-		<h1>{{season.name}} - Details</h1>
+		<h1>{{season.name}}</h1>
 		<p>{{season.desc}}</p>
+		<p>{{season.start_month}}/{{season.start_year}} - {{season.end_month}}/{{season.end_year}}</p> 
+		<table class="table table-condensed table-striped">
+			<tr>
+				<th>Home Team</th>
+				<th>Away Team</th>
+				<th>Date</th>
+				<th>Location</th>
+			</tr>
+			{{#each season.games}}
+			<tr>
+				<td><a href="/team/{{home_team_id}}">{{home_team_name}}</a> <!-- ({{home_team_record}}) --></td>
+				<td><a href="/team/{{away_team_id}}">{{away_team_name}}</a> <!-- ({{away_team_record}}) --></td>
+				<td>{{date}}</td>			
+				<td><a href="/location/{{location_id}}">{{location_name}}</a></td>		
+			</tr>
+	 		{{/each}}
+ 		</table>
 	{{else}}
 		<p>Loading...</p>
 	{{/if}}
