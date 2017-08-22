@@ -1,0 +1,7 @@
+1. Need to implement python program that will read CSV file
+and load data into the MongoDB.
+
+2. Need to implement logic in the Python program to randomly
+schedule games between the teams in the leagues and insert
+those records/documents into the games collection.
+
