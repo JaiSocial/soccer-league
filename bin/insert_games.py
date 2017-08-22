@@ -275,4 +275,4 @@ if __name__ == '__main__':
     
     generate_game_documents(reversed_list,2)
 
-    # insert_game_documents()
+    insert_game_documents(game_list)
