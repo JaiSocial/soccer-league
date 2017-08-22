@@ -1,3 +1,43 @@
+db.seasons.remove({});
+
+db.seasons.insertMany([
+	{season_id: 1, name: "Grade 5-6 Girls Spring Season 2017", desc: "Summer Season 2017 for Gaithersburg girls grades 5-6", start_year: 2017, end_year: 2017, start_month: 4, end_month: 6, game_ids : [1,2,3,4,5,6,7,8,9,10,11,12]},
+	{season_id: 2, name: "Grade 5-6 Girls Fall Season 2017", desc: "Fall Season 2017 for Gaithersburg girls grades 5-6", start_year: 2017, end_year: 2017, start_month: 8, end_month: 11, game_ids : [13,14,15,16,17,18,19,20,21,22,23,24]}
+
+]);
+
+db.games.remove({});
+
+db.games.insertMany([
+	{game_id: 1, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 2, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 3, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 4, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 5, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 6, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 7, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 8, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 9, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 10, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 11, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 12, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 13, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 14, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 15, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 16, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 17, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 18, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 19, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 20, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 21, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 22, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 23, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: },
+	{game_id: 24, date: , location_id: , home_team_id: , away_team_id: , home_team_score: , away_team_score: }
+]);
+
+
+db.teams.remove({});
+
 db.teams.insertMany([{team_id: 1, name: "DC United", season_id: 1, coach_id : 1},
 {team_id: 2, name: "Manchester United", season_id: 1, coach_id : 2},
 {team_id: 3, name: "Barcelona", season_id: 1, coach_id : 3},
@@ -6,8 +46,34 @@ db.teams.insertMany([{team_id: 1, name: "DC United", season_id: 1, coach_id : 1}
 {team_id: 6, name: "PSG", season_id: 1, coach_id : 6}]);
 
 
-db.locations.insertMany([
-	{location_id: 1, street_number: 123, street_name: "Deer Park Lane", zipcode: 20878, city: "Gaithersburg", state: "Maryland"},
-	{location_id: 2, street_number: 456, street_name: "Quince Orchard Blvd", zipcode: 20878, city: "Gaithersburg", state: "Maryland"},
-	{location_id: 3, street_number: 789, street_name: "Lakelands Blvd", zipcode: 20878, city: "Gaithersburg", state: "Maryland"},
+db.coaches.remove({});
+
+db.coaches.insertMany([
+	{coach_id: 1, person_id: 1},
+	{coach_id: 2, person_id: 2},
+	{coach_id: 3, person_id: 3},
+	{coach_id: 4, person_id: 4},
+	{coach_id: 5, person_id: 5},
+	{coach_id: 6, person_id: 6}
 ]);
+
+
+db.persons.remove({});
+
+db.persons.insertMany([
+	{person_id: 1, first_name: "Ben", last_name: "Olsen", phone_number_1: "240-343-3343", phone_number_2: "301-332-3345", email_address: "ben.olsen@dcunited.com"},
+	{person_id: 2, first_name: "Jose", last_name: "Mourinho", phone_number_1: "240-654-5656", phone_number_2: "301-304-5543", email_address: "jose.mourinho@manu.com"},
+	{person_id: 3, first_name: "Ernesto", last_name: "Valverde", phone_number_1: "240-546-6636", phone_number_2: "301-125-5151", email_address: "valverde@barca.com"},
+	{person_id: 4, first_name: "Jurgen", last_name: "Klopp", phone_number_1: "240-967-0907", phone_number_2: "301-967-0907", email_address: "jurgen@liv.com"},
+	{person_id: 5, first_name: "Pep", last_name: "Guardiola", phone_number_1: "240-554-6567", phone_number_2: "301-767-8884", email_address: "pepman@mancity.com"},
+	{person_id: 6, first_name: "Unai", last_name: "Emery", phone_number_1: "240-555-4363", phone_number_2: "301-454-5654", email_address: "emery@psg.com"},
+]);
+
+db.locations.remove({});
+
+db.locations.insertMany([
+	{location_id: 1, name: "Kelley Park", street_number: 123, street_name: "Victory Farm Drive", zipcode: 20878, city: "Gaithersburg", state: "Maryland", google_maps_url: "https://www.google.ca/maps/place/Kelley+Park/@39.1476554,-77.1862753,1060m/data=!3m1!1e3!4m5!3m4!1s0x0:0x2b6c062b41e5d03e!8m2!3d39.146306!4d-77.180779?hl=en"},
+	{location_id: 2, name: "Robertson Park", street_number: 456, street_name: "Rabbitt Road", zipcode: 20878, city: "Gaithersburg", state: "Maryland", google_maps_url: "https://www.google.ca/maps/place/Gaithersburg+Robertson+Park+Youth+Center/@39.1400355,-77.2325172,265m/data=!3m1!1e3!4m12!1m6!3m5!1s0x89b62d0e354fabab:0x310faa7997fb1ff6!2sGaithersburg+Robertson+Park+Youth+Center!8m2!3d39.140358!4d-77.230358!3m4!1s0x89b62d0e354fabab:0x310faa7997fb1ff6!8m2!3d39.140358!4d-77.230358?hl=en"},
+	{location_id: 3, name: "Lakelands Park Soccer Fields", street_number: 789, street_name: "Main Street", zipcode: 20878, city: "Gaithersburg", state: "Maryland", google_maps_url: "https://www.google.ca/maps/place/Lakelands+Park+Soccer+Fields/@39.1162514,-77.233899,18z/data=!4m8!1m2!2m1!1slakelands+middle+school+soccer+field+gaithersburg+md!3m4!1s0x0:0x357e3878c4cefd6!8m2!3d39.1157274!4d-77.2345841?hl=en"},
+]);
+
