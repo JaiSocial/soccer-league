@@ -5,3 +5,22 @@ and load data into the MongoDB.
 schedule games between the teams in the leagues and insert
 those records/documents into the games collection.
 
+3. Add support to upload coaches' pictures.
+
+4. Add support to display coaches' pictures.
+
+5. Implement program to validate and load season/games schedules from .csv format
+
+6. Implement program to validate and load coaches information from .csv format
+
+7. Add site icon top-left corner
+
+8. Add background picture
+
+9. Embed non-satellite versions of Google maps
+
+10. Implement Team Details views
+
+11. Add support to display jersey color in simple box next to team names
+
+12. Add support so that can only register by invitation and only allow certain email addresses.
