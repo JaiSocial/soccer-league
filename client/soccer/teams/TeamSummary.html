@@ -1,9 +1,13 @@
 <template name="TeamSummary">
 	<article class="team">
-		<h3>{{name}}</h3>
-		<p>Coach:</p>
+		<h3>{{name}}</h3>		
 		{{#each coaches}}
-			<p>Coach: <a href="mailto:{{email_address}}?Subject='{{name}}'">{{first_name}} {{last_name}}</a> - {{phone_number}}</p>
+			<p>{{coach_title}}: <a href="mailto:{{email_address}}?Subject='{{name}}'">{{first_name}} {{last_name}}</a></p>			
+			<i class="fa fa-mobile" aria-hidden="true" title="primary phone"> </i>  {{phone_number_1}}			
+			<br>
+			<i class="fa fa-phone" aria-hidden="true" title="secondary phone"> </i> {{phone_number_2}}
+			<br>
+			<br>
 		{{/each}}
 		<a href="/team/{{team_id}}">View Details</a>
 	</article>

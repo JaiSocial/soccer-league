@@ -1,5 +1,6 @@
 Seasons     = new Mongo.Collection('seasons');
 Coaches     = new Mongo.Collection('coaches');
+Persons     = new Mongo.Collection('persons');
 Parents     = new Mongo.Collection('parents');
 Teams       = new Mongo.Collection('teams');
 Players     = new Mongo.Collection('players');
@@ -14,6 +15,16 @@ Seasons.allow({
 		return !!userId;
 	}
 });
+
+Persons.allow({
+	insert: function(userId, doc){
+		return !!userId;
+	},
+	update: function (userId, doc){
+		return !!userId;
+	}
+});
+
 
 Coaches.allow({
 	insert: function(userId, doc){
@@ -139,13 +150,16 @@ PersonSchema = new SimpleSchema({
 });
 
 
+Persons.attachSchema ( PersonSchema );
+
 CoachesSchema = new SimpleSchema({
 	coaches_id: {
 		type : Number,
 		label : 'Coaches ID'
 	},
-	person: {
-		type: PersonSchema
+	person_id: {
+		type: Number,
+		label : 'Person ID'		
 	}
 });
 
@@ -166,9 +180,9 @@ Parents.attachSchema(ParentSchema);
 
 
 PlayersSchema = new SimpleSchema({
-	team_member_id: {
+	player_id: {
 		type : Number,
-		label : 'Team Member ID'
+		label : 'Player ID'
 	},
 	first_name: {
 		type: String,
@@ -217,7 +231,7 @@ TeamsSchema = new SimpleSchema({
 	}
 });
 
-Teams.attachSchema(TeamsSchema);
+Teams.attachSchema( TeamsSchema );
 
 LocationsSchema = new SimpleSchema({
 	location_id: {

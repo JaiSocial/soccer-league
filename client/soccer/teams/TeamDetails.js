@@ -8,7 +8,8 @@ Template.TeamDetails.onCreated(function (){
 
 Template.TeamDetails.helpers({
 	team: () => {
-		var id = FlowRouter.getParam('team_id');
-		return Teams.findOne({_id: id});
+		const id = FlowRouter.getParam('id');
+		const team_id_int = parseInt(id);
+		return Teams.findOne({"team_id": team_id_int});
 	}
 })

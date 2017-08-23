@@ -38,12 +38,14 @@ db.games.insertMany([
 
 db.teams.remove({});
 
-db.teams.insertMany([{team_id: 1, name: "DC United", season_id: 1, coach_id : 1},
-{team_id: 2, name: "Manchester United", season_id: 1, coach_id : 2},
-{team_id: 3, name: "Barcelona", season_id: 1, coach_id : 3},
-{team_id: 4, name: "Liverpool", season_id: 1, coach_id : 4},
-{team_id: 5, name: "Manchester City", season_id: 1, coach_id : 5},
-{team_id: 6, name: "PSG", season_id: 1, coach_id : 6}]);
+db.teams.insertMany([
+	{team_id: 1, name: "DC United", season_id: 1, coach_ids : [{"role": "main", "coach_id" : 1}, {"role" : "assistant", "coach_id" :7}]},
+	{team_id: 2, name: "Manchester United", season_id: 1, coach_ids : [{"role" : "main", "coach_id" : 2}, {"role" : "assistant", "coach_id" : 8}]},
+	{team_id: 3, name: "Barcelona", season_id: 1, coach_ids : [{"role" : "main", "coach_id" : 3}, {"role" : "assistant", "coach_id" : 9}]},
+	{team_id: 4, name: "Liverpool", season_id: 1, coach_ids : [{"role" : "main", "coach_id" : 4}, {"role" : "assistant", "coach_id" : 10}]},
+	{team_id: 5, name: "Manchester City", season_id: 1, coach_ids : [{"role" : "main", "coach_id" : 5}, {"role" : "assistant", "coach_id" : 11}]},
+	{team_id: 6, name: "PSG", season_id: 1, coach_ids : [{"role" : "main", "coach_id" : 6} ,{"role" : "assistant", "coach_id" :12}]}
+]);
 
 
 db.coaches.remove({});
@@ -54,7 +56,14 @@ db.coaches.insertMany([
 	{coach_id: 3, person_id: 3},
 	{coach_id: 4, person_id: 4},
 	{coach_id: 5, person_id: 5},
-	{coach_id: 6, person_id: 6}
+	{coach_id: 6, person_id: 6},
+	{coach_id: 7, person_id: 7},
+	{coach_id: 8, person_id: 8},
+	{coach_id: 9, person_id: 9},
+	{coach_id: 10, person_id: 10},
+	{coach_id: 11, person_id: 11},
+	{coach_id: 12, person_id: 12}
+
 ]);
 
 
@@ -67,13 +76,19 @@ db.persons.insertMany([
 	{person_id: 4, first_name: "Jurgen", last_name: "Klopp", phone_number_1: "240-967-0907", phone_number_2: "301-967-0907", email_address: "jurgen@liv.com"},
 	{person_id: 5, first_name: "Pep", last_name: "Guardiola", phone_number_1: "240-554-6567", phone_number_2: "301-767-8884", email_address: "pepman@mancity.com"},
 	{person_id: 6, first_name: "Unai", last_name: "Emery", phone_number_1: "240-555-4363", phone_number_2: "301-454-5654", email_address: "emery@psg.com"},
+	{person_id: 7, first_name: "Neb", last_name: "Olsen", phone_number_1: "240-343-3343", phone_number_2: "301-332-3345", email_address: "neb.olsen@dcunited.com"},
+	{person_id: 8, first_name: "Esoj", last_name: "Mourinho", phone_number_1: "240-654-5656", phone_number_2: "301-304-5543", email_address: "esoj.mourinho@manu.com"},
+	{person_id: 9, first_name: "Otsenre", last_name: "Valverde", phone_number_1: "240-546-6636", phone_number_2: "301-125-5151", email_address: "ernie@barca.com"},
+	{person_id: 10, first_name: "Jujji", last_name: "Klopp", phone_number_1: "240-967-0907", phone_number_2: "301-967-0907", email_address: "jujji@liv.com"},
+	{person_id: 11, first_name: "Pedro", last_name: "Guardiola", phone_number_1: "240-554-6567", phone_number_2: "301-767-8884", email_address: "pedro@mancity.com"},
+	{person_id: 12, first_name: "Uli", last_name: "Emery", phone_number_1: "240-555-4363", phone_number_2: "301-454-5654", email_address: "uli@psg.com"},
 ]);
 
 db.locations.remove({});
 
 db.locations.insertMany([
-	{location_id: 1, name: "Kelley Park", street_number: 123, street_name: "Victory Farm Drive", zipcode: 20878, city: "Gaithersburg", state: "Maryland", google_maps_url: "https://www.google.ca/maps/place/Kelley+Park/@39.1476554,-77.1862753,1060m/data=!3m1!1e3!4m5!3m4!1s0x0:0x2b6c062b41e5d03e!8m2!3d39.146306!4d-77.180779?hl=en"},
-	{location_id: 2, name: "Robertson Park", street_number: 456, street_name: "Rabbitt Road", zipcode: 20878, city: "Gaithersburg", state: "Maryland", google_maps_url: "https://www.google.ca/maps/place/Gaithersburg+Robertson+Park+Youth+Center/@39.1400355,-77.2325172,265m/data=!3m1!1e3!4m12!1m6!3m5!1s0x89b62d0e354fabab:0x310faa7997fb1ff6!2sGaithersburg+Robertson+Park+Youth+Center!8m2!3d39.140358!4d-77.230358!3m4!1s0x89b62d0e354fabab:0x310faa7997fb1ff6!8m2!3d39.140358!4d-77.230358?hl=en"},
-	{location_id: 3, name: "Lakelands Park Soccer Fields", street_number: 789, street_name: "Main Street", zipcode: 20878, city: "Gaithersburg", state: "Maryland", google_maps_url: "https://www.google.ca/maps/place/Lakelands+Park+Soccer+Fields/@39.1162514,-77.233899,18z/data=!4m8!1m2!2m1!1slakelands+middle+school+soccer+field+gaithersburg+md!3m4!1s0x0:0x357e3878c4cefd6!8m2!3d39.1157274!4d-77.2345841?hl=en"},
+	{location_id: 1, name: "Kelley Park", street_number: 123, street_name: "Victory Farm Drive", zipcode: 20878, city: "Gaithersburg", state: "Maryland", google_map : "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4617.111939273364!2d-77.1862753!3d39.1476554!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2b6c062b41e5d03e!2sKelley+Park!5e1!3m2!1sen!2sca!4v1503449385686" ,google_maps_url: "https://www.google.ca/maps/place/Kelley+Park/@39.1476554,-77.1862753,1060m/data=!3m1!1e3!4m5!3m4!1s0x0:0x2b6c062b41e5d03e!8m2!3d39.146306!4d-77.180779?hl=en"},
+	{location_id: 2, name: "Robertson Park", street_number: 456, street_name: "Rabbitt Road", zipcode: 20878, city: "Gaithersburg", state: "Maryland", google_map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1154.4029410632586!2d-77.2325172!3d39.1400355!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b62d0e354fabab%3A0x310faa7997fb1ff6!2sGaithersburg+Robertson+Park+Youth+Center!5e1!3m2!1sen!2sca!4v1503450613789", google_maps_url: "https://www.google.ca/maps/place/Gaithersburg+Robertson+Park+Youth+Center/@39.1400355,-77.2325172,265m/data=!3m1!1e3!4m12!1m6!3m5!1s0x89b62d0e354fabab:0x310faa7997fb1ff6!2sGaithersburg+Robertson+Park+Youth+Center!8m2!3d39.140358!4d-77.230358!3m4!1s0x89b62d0e354fabab:0x310faa7997fb1ff6!8m2!3d39.140358!4d-77.230358?hl=en"},
+	{location_id: 3, name: "Lakelands Park Soccer Fields", street_number: 789, street_name: "Main Street", zipcode: 20878, city: "Gaithersburg", state: "Maryland", google_map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1547.785164255715!2d-77.233899!3d39.1162514!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x357e3878c4cefd6!2sLakelands+Park+Soccer+Fields!5e0!3m2!1sen!2sca!4v1503450674594", google_maps_url: "https://www.google.ca/maps/place/Lakelands+Park+Soccer+Fields/@39.1162514,-77.233899,18z/data=!4m8!1m2!2m1!1slakelands+middle+school+soccer+field+gaithersburg+md!3m4!1s0x0:0x357e3878c4cefd6!8m2!3d39.1157274!4d-77.2345841?hl=en"},
 ]);
 

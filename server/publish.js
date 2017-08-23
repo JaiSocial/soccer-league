@@ -10,6 +10,10 @@ Meteor.publish('coaches', function (){
 	return Coaches.find({});
 });
 
+Meteor.publish('persons', function (){
+	return Persons.find({});
+});
+
 Meteor.publish('players', function (){
 	return Players.find({});
 });

@@ -7,6 +7,7 @@
 			<p>{{location.city}}, {{location.state}}</p>
 			<p>{{location.zipcode}}</p>
 			<p><a target="_blank" href="{{location.google_maps_url}}">Google Maps</a></p>
+			<iframe src="{{google_map}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</article>
 	{{else}}
 		<p>Loading</p>
